@@ -13,7 +13,7 @@
 <body class="bg-light text-dark">
     <nav class="navbar navbar-expand-lg navbar-dark bg-brown bg-dark">
     <div class="container">
-      <a class="navbar-brand fw-bold fs-3" href="#">☕ Café Vintage</a>
+      <a class="navbar-brand fw-bold fs-3" href="#">☕ Cafecito Barranqueño Vintage</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
