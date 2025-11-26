@@ -28,4 +28,22 @@ class PedidoController extends Controller
         return view('generarPedido', compact('ordenado'));
 
     }
-}
+
+    public function masCantidad($id){
+        $ordenado = Ordenado::find($id);
+        $ordenado->cantidad += 1;
+        $ordenado->save();
+        return redirect('/generarPedido');
+    }
+
+    public function menorCantidad($id){
+        $ordenado = Ordenado::find($id);
+        $ordenado->cantidad -=1;
+        if ($ordenado->cantidad < 1){
+            $ordenado->delete();
+        }else{
+            $ordenado->save();
+        }
+        return redirect('/generarPedido');
+        }
+    }

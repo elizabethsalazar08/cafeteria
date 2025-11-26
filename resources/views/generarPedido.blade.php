@@ -39,14 +39,14 @@
             <td>{{ $ordenados -> nombre }}</td>
             <td>
               <img style="width: 100px; height: 60px;"
-               src="{{ asset('img/'.$ordenados->imagen) }}" alt="" />
+               src="{{ asset('img_cafeteria/'.$ordenados->imagen) }}" alt="{{$ordenados->nombre}}" />
             </td>
             <td>{{ $ordenados -> precio }}</td>
             <td>{{ $ordenados -> cantidad }}</td>
             <td>{{ $ordenados -> precio * $ordenados -> cantidad }}</td>
 <td>
-                <a href="" class="btn btn-primary btn-sm">+</a>
-                <a href="" class="btn btn-secondary btn-sm">-</a>
+                <a href="{{ url('/ordenadoMas') }}/{{$ordenados->id}}" class="btn btn-primary btn-sm">+</a>
+                <a href="{{ url('/ordenadoMenos') }}/{{$ordenados->id}}" class="btn btn-secondary btn-sm">-</a>
             </td>
         </tr>
         @php
