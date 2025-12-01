@@ -27,3 +27,6 @@ Route::get('/ordenadoMas/{id}',
 Route::get('/ordenadoMenos/{id}',
     [PedidoController::class,'menorCantidad']);
 
+Route::post('/grabarPedido',
+[PedidoController::class,'grabarPedido']);
+
