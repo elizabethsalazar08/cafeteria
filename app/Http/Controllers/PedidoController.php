@@ -79,4 +79,15 @@ class PedidoController extends Controller
         return redirect('/generarPedido');
     }
 
+    public function getPedido(){
+        $pedido= Pedido::orderBy('nombre','asc')->get();
+        return view('verRegistrado', compact('pedido'));
+    }
+
+    public function borrarPedido($id){
+        $pedido=Pedido::find($id);
+        $pedido->delete();
+        return redirect('/administrarRegistros');
+    }
+
     }

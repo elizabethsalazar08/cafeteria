@@ -6,7 +6,7 @@
 
 @section('titulo')
 <div class="row">
-  <h1 class="col-8 align-self-start">Pedidos</h1>
+  <h1 class="col-8 align-self-start">Pedidos realizados</h1>
 </div>
 @stop
 
@@ -24,19 +24,16 @@
             </tr>
 </thead>
 <tbody>
-    @foreach ($detalles as $detalle)
+    @foreach ($pedido as $realizado)
     <tr>
-        <td>{{$producto->id}}</td>
-        <td>{{$producto->nombre}}</td>
-        <td>{{$producto->precio}}</td>
-        <td><img src="{{ asset('img_cafeteria/'.$producto->imagen) }}"
-            alt="{{$producto->nombre}}"
-            widht="100"
-            height="50">
-        </td>
+        <td>{{$realizado->id}}</td>
+        <td>{{$realizado->nombre}}</td>
+        <td>{{$realizado->origen}}</td>
+        <td>{{$realizado->fecha}}</td>
+        <td>{{$realizado->total}}</td>
         <td>
-            <a href="{{ url('/agregarProducto') }}/{{$producto->id}}"
-            class="btn btn-primary btn-sm">Agregar</a>
+            <a href="{{ url('/eliminarPedido/'.$realizado->id)}}"
+            class="btn btn-primary btn-sm">Eliminar</a>
 </td>
 </tr>
 @endforeach
